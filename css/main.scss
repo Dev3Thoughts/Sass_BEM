@@ -1,3 +1,10 @@
+@import './resets';
+@import './variables';
+
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name)
+};
+
 body, html {
     margin: 0;
     height: 100vh;
@@ -16,7 +23,11 @@ body {
         display: block;
         height: 100px;
         width: 100%;
-        background: #e0466b;
+        background: $backgroundColor;
+    }
+    &__desc {
+        font-weight: weight(bold);
+        color: blueviolet;
     }
     &__content {
         padding: 1.5em;
@@ -37,7 +48,7 @@ body {
         font-size: .85em;
 
         &--active {
-            background: #d4d4d4;
+            background: $itemBackground;
             font-weight: bold;
         }
     }
@@ -52,7 +63,7 @@ body {
         margin-top: .5em;
 
         &:hover {
-            background: #267764;
+            background: $hoverBackground;
         }
     }
 
